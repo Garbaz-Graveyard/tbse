@@ -1,18 +1,29 @@
 #include <stdio.h>
 #include <unistd.h>
+#include "input.h"
 
 //Switch to altenate screen:
-#define SWITCH_SCREEN printf("\033[?47h")
+#define TERM_ALT()  printf("\e7\e[?47h")
 //Switch back:
-#define SWITCH_BACK   printf("\033[?47l")
+#define TERM_BACK() printf("\e[2J\e[?47l\e8")
 
-static struct termios oldTermios;
+#define TERM_POS(x,y) printf("\e[%d;%dH",y,x)
 
 int main()
 {
-	SWITCH_SCREEN;
-	printf("Hello World\n");
-	sleep(1);
-	SWITCH_BACK;
+	TERM_ALT();
+	TERM_POS(0,0);
+	for(int i = 1;i < 10; i++)
+	{
+		TERM_POS(i,i*i);
+		printf("+");
+	}
+	printf("\n");
+	
+	input_setraw();
+	while(getchar() != 'q');
+	input_setcan();
+	
+	TERM_BACK();
 	return 0;
 }
