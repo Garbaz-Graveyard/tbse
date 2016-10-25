@@ -1,0 +1,81 @@
+Tables
+======
+
+(1) Basic structure:
+--------------------
+
+
+A table consists of dashes ('-'), crosses ('+') and vertical bars ('|') which form a table of the following form:
+
+    +-------+-------------------+----+---------
+    |       |                   |    |         
+    +-------+-------------------+----+---------
+    |       |                   |    |         
+    |       |                   |    |         
+    |       |                   |    |         
+    +-------+-------------------+----+---------
+    |       |                   |    |         
+    |       |                   |    |         
+    
+    Fig.1: The basic structure of a table
+
+
+Each rectangular room inbetwenn the table characters ('-','+' & '|') is called a cell. Cells can consist of any characters, including '+','-' and '|'.
+
+
+    +-------+-------------------+----+---------
+    |Hello  |World!             |8   |         
+    +-------+-------------------+----+---------
+    |B3-C3+1||||||||||||||||||| |4   |         
+    |=      |                   |    |         
+    |       |                   |    |         
+    +-------+-------------------+----+---------
+    |5      |{[]}               |    |         
+    |       |                   |    |         
+    
+    Fig.2: A table with filled cells
+
+
+(2) Indices
+-----------
+
+Each cell is assigned a pair of indices, which indetifies it in the grid of the table. This pair consists of letters indicating the column and a number indicating the row. (e.g. "A5" or "BZ123")
+The row numbers are assigned from top to bottom starting at 1. Column letters go through the latin alphabet from A to Z and then wrapping around with another letter added which increments every time the first one wrappes around (Basically base 26 with 0='A',1='B',...,25='Z').
+
+    +--+-------+-------------------+----+---------
+    |  |   A   |         B         | C  |      D  
+    +--+-------+-------------------+----+---------
+    | 1|       |                   |    |         
+    +--+-------+-------------------+----+---------
+    |  |       |This is            |    |         
+    | 2|       |        cell       |    |         
+    |  |       |             B2.   |    |         
+    +--+-------+-------------------+----+---------
+    |  |       |                   |    |         
+    | 3|       |                   |    |         
+    
+    Fig.3: A table with labled rows and collumns
+
+
+(3) Fancy display using unicode
+-------------------------------
+
+Though not practical to type from hand, it is possible to display tables in a more readable fashion using unicode characters.
+
+
+    ┌──┬───────┬───────────────────┬────┬─────────
+    │  │   A   │         B         │ C  │      D  
+    ├──┼───────┼───────────────────┼────┼─────────
+    │ 1│       │                   │    │         
+    ├──┼───────┼───────────────────┼────┼─────────
+    │  │       │                   │    │         
+    │ 2│       │                   │    │         
+    │  │       │                   │    │         
+    ├──┼───────┼───────────────────┼────┼─────────
+    │  │       │                   │    │         
+    │ 3│       │                   │    │         
+
+	Fig.4: A table displayed using unicode characters
+
+
+
