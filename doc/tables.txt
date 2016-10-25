@@ -75,7 +75,7 @@ Though not practical to type from hand, it is possible to display tables in a mo
     │  │       │                   │    │         
     │ 3│       │                   │    │         
 
-	Fig.4: A table displayed using unicode characters
+    Fig.4: A table displayed using unicode characters
 
 
 
