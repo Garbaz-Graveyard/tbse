@@ -1,0 +1,47 @@
+Reading
+=======
+
+(1) Detecting borders
+---------------------
+
+Go through lines:   If line only consists of '+' & '-' -> Is horizontal border.
+Go through columns: If column only cosists of '+' & '|' -> Is vertical border.
+
+
+    Column borders
+
+    |       |           |
+    V       V           V
+    
+    +-------+-----------+---  <- Row border
+    |       |           |
+    |       |           |
+    |       |           |
+    +-------+-----------+---  <--   ''
+    |       |           |
+    +-------+-----------+---  <--   ''
+    |       |           |
+
+    Fig.1: Row borders and column borders are read in
+
+(2) Special cases
+-----------------
+
+      |        |
+      V        V
+
+      |        |
+      |        |
+    --+--------+---  <--
+      |        |
+    --+--------+---  <--
+      |        |
+
+    Fig.2: A table without a frame
+
+Tables without a frame (Outermost row/column isn't a border) still get interpreted propperly.
+
+(...)
+
+(3) Getting cells
+-----------------
